@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Button quitButton;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI leverCount;
     public Transform playerTransform;
     public float timeLimit;
     private float currentTime;
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
         quitButton.onClick.AddListener(QuitGame);
         finishPoint.SetActive(false);
         currentTime = timeLimit;
+        timerText.color = Color.red;
     
     }
     public void ShowLevelComplete()
@@ -95,6 +97,12 @@ public class GameManager : MonoBehaviour
         {
             isPaused = !isPaused;
             pauseMenu.SetActive(isPaused);
+            
+            if(!isPaused)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else { Cursor.lockState = CursorLockMode.Confined; }
             Time.timeScale = isPaused ? 0f : 1f;
         }
         
@@ -135,6 +143,7 @@ public class GameManager : MonoBehaviour
     public void ActivateLever()
     {
         activatedlevers++;
+        leverCount.text = "Levers: " + activatedlevers + "/" + totalLevers;
         Debug.Log("lever activated, Total: " + activatedlevers);
 
         UpdateLevers();
