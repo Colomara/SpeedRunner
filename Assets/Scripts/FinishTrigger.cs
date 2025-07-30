@@ -33,6 +33,7 @@ public class FinishTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Cursor.lockState = CursorLockMode.Confined; 
             gameManager.ShowLevelComplete();
             Time.timeScale = 0f;
         }
