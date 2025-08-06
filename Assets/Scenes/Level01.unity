@@ -471,6 +471,7 @@ GameObject:
   - component: {fileID: 279968782}
   - component: {fileID: 279968783}
   - component: {fileID: 279968781}
+  - component: {fileID: 279968786}
   m_Layer: 0
   m_Name: lever
   m_TagString: Untagged
@@ -494,7 +495,6 @@ MonoBehaviour:
   gameManager: {fileID: 1653433868}
   leverRenderer: {fileID: 279968782}
   activatedColor: {r: 0, g: 1, b: 0, a: 1}
-  deactivatedColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!23 &279968782
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -581,6 +581,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &279968786
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279968780}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8be321e22cbcc5c4dad4fdac0219f570, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &282208850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,6 +1981,7 @@ GameObject:
   - component: {fileID: 939533468}
   - component: {fileID: 939533467}
   - component: {fileID: 939533466}
+  - component: {fileID: 939533471}
   m_Layer: 0
   m_Name: lever (2)
   m_TagString: Untagged
@@ -1983,7 +2005,6 @@ MonoBehaviour:
   gameManager: {fileID: 1653433868}
   leverRenderer: {fileID: 939533468}
   activatedColor: {r: 0, g: 1, b: 0, a: 1}
-  deactivatedColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &939533467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2070,6 +2091,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &939533471
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939533465}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8be321e22cbcc5c4dad4fdac0219f570, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2587,6 +2629,7 @@ GameObject:
   - component: {fileID: 1050502860}
   - component: {fileID: 1050502858}
   - component: {fileID: 1050502863}
+  - component: {fileID: 1050502864}
   m_Layer: 0
   m_Name: lever (1)
   m_TagString: Untagged
@@ -2610,7 +2653,6 @@ MonoBehaviour:
   gameManager: {fileID: 1653433868}
   leverRenderer: {fileID: 1050502859}
   activatedColor: {r: 0, g: 1, b: 0, a: 1}
-  deactivatedColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!23 &1050502859
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2631,7 +2673,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0686a5c4596a850499636998776f0ecb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2711,6 +2753,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasToHide: {fileID: 1227644370}
+--- !u!95 &1050502864
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050502857}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8be321e22cbcc5c4dad4fdac0219f570, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1061322757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4805,7 +4868,6 @@ GameObject:
   - component: {fileID: 1786222210}
   - component: {fileID: 1786222212}
   - component: {fileID: 1786222213}
-  - component: {fileID: 1786222215}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -4997,18 +5059,6 @@ CharacterController:
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1786222215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786222204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd8afc9d30e312f44ad9a4aeac5489a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1789318078
 GameObject:
   m_ObjectHideFlags: 0

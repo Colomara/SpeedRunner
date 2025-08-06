@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     public LevelData levelData;
@@ -28,6 +29,8 @@ public class GameManager : MonoBehaviour
     public Lever[] levers;
     public GameObject levelCompletePanel;
     public Animator levelCompleteAnimator;
+
+    HashSet<Lever> countedLevers = new HashSet<Lever>();
 
 
 
@@ -140,11 +143,12 @@ public class GameManager : MonoBehaviour
         currentTime = timeLimit;
     }
 
-    public void ActivateLever()
+    public void ActivateLever(Lever lever)
     {
+        if (!countedLevers.Add(lever)) return;
         activatedlevers++;
-        leverCount.text = "Levers: " + activatedlevers + "/" + totalLevers;
-        Debug.Log("lever activated, Total: " + activatedlevers);
+        leverCount.text = $"Levers: {activatedlevers}/{totalLevers}";
+        Debug.Log($"lever activated, Total: {activatedlevers}");
 
         UpdateLevers();
 
@@ -152,6 +156,7 @@ public class GameManager : MonoBehaviour
         {
             OpenFinishPoint();
         }
+        lever.ChangeColorToGreen();
 
     }
 
@@ -163,10 +168,10 @@ public class GameManager : MonoBehaviour
             {
                 lever.ChangeColorToGreen();
             }
-            else
-            {
-                lever.ChangeColorToRed();
-            }
+            //else
+            //{
+            //    lever.ChangeColorToRed();
+            //}
         }
     }
  

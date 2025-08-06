@@ -7,10 +7,15 @@ public class Lever : MonoBehaviour
     public GameManager gameManager;
     public Renderer leverRenderer;
     public Color activatedColor = Color.green;
-    public Color deactivatedColor = Color.red;
+    
+    Animator anim;
     void Start()
     {
-        leverRenderer.material.color = deactivatedColor;
+       // leverRenderer.material.color = deactivatedColor;
+    }
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,21 +25,17 @@ public class Lever : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && !isActivated)
+        if (other.CompareTag("Player") && !isActivated) 
         {
             isActivated = true;
             leverRenderer.material.color = activatedColor;
-            gameManager.ActivateLever();
-            Debug.Log("Activated");
-          //  Destroy(gameObject);
+            anim.SetTrigger("Activate");   
+            gameManager.ActivateLever(this);
         }
     }
     public void ChangeColorToGreen()
     {
         leverRenderer.material.color = activatedColor;
     }
-    public void ChangeColorToRed()
-    {
-        leverRenderer.material.color= deactivatedColor;
-    }
+   
 }
