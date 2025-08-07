@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class ShowAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float amplitude = 0.3f;
+    public float frequency = 1.2f;
+    Vector3 startPos;
+    float phase;
     void Start()
     {
-        
+        startPos = transform.localPosition;
+        phase = Random.value * Mathf.PI * 2;
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
-        
+        float offset = Mathf.Sin(Time.time * frequency + phase) * amplitude;
+        transform.localPosition = startPos + Vector3.up * offset;
     }
 }

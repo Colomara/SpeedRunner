@@ -68,19 +68,19 @@ public class EnemyAI : MonoBehaviour
         Vector3 direction = (player.position - transform.position).normalized;
         float step = moveSpeed * Time.deltaTime;
 
-        // Повернуться к игроку
+        
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, direction, step, 0.0f);
         transform.rotation = Quaternion.LookRotation(newDirection);
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        // Двигаться только если ещё далеко
+        
         if (distanceToPlayer > attackRange)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, step);
         }
 
-        // Атаковать только если в радиусе и не на кд
+      
         if (distanceToPlayer <= attackRange && !isAttacking)
         {
             StartCoroutine(AttackCoroutine());

@@ -6,34 +6,27 @@ public class SlowDamageZone : MonoBehaviour
 {
     public float damagePerSecond = 10f;
     public float slowMultiplier = 0.5f;
+    const string SfxName = "foot-stepping-on-thin-ice-290822";
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter (Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            PlayerMovement movement = other.GetComponent<PlayerMovement>();
-            PlayerHealth health = other.GetComponent<PlayerHealth>();
+        if (!other.CompareTag("Player")) return;
 
-            if (movement != null)
-                movement.SetSpeedMultiplier(slowMultiplier);
+        other.GetComponent<PlayerMovement>()?.SetSpeedMultiplier (slowMultiplier);
+        other.GetComponent<PlayerHealth>()?.StartTakingDamage(damagePerSecond);
 
-            if (health != null)
-                health.StartTakingDamage(damagePerSecond);
-        }
+        AudioManager.Instance.PlaySFX(SfxName, 0.8f);
+     
     }
 
-    private void OnTriggerExit(Collider other)
+
+    private void OnTriggerExit (Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            PlayerMovement movement = other.GetComponent<PlayerMovement>();
-            PlayerHealth health = other.GetComponent<PlayerHealth>();
+        if (!other.CompareTag("Player")) return;
 
-            if (movement != null)
-                movement.SetSpeedMultiplier(1f);
-
-            if (health != null)
-                health.StopTakingDamage();
-        }
+        other.GetComponent<PlayerMovement>()?.SetSpeedMultiplier(1f);
+        other.GetComponent<PlayerHealth>()?.StopTakingDamage();
+        AudioManager.Instance.StopLoop();
+      
     }
 }

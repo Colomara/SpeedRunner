@@ -58,7 +58,7 @@ public class AudioManager : MonoBehaviour
 
         PlayMusic(menuMusic);
     }
-    private void Update()
+    private void Update ()
     {
         if (Input.GetKeyDown(KeyCode.M))
             AudioListener.pause = !AudioListener.pause;
@@ -97,17 +97,17 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning($"SFX '{clipName}' not found");
     }
 
-    /// <summary> »зменить громкость музыки линейно (0Е1). </summary>
+    
     public void SetMusicVolume(float value01)
     {
-        musicSource.volume = Mathf.Clamp01(value01); // сразу же
+        musicSource.volume = Mathf.Clamp01(value01); 
     }
 
     private IEnumerator FadeAndPlay(AudioClip nextClip, float fadeTime)
     {
         float startVol = musicSource.volume;
 
-        // Fade out
+       
         for (float t = 0f; t < fadeTime; t += Time.deltaTime)
         {
             musicSource.volume = Mathf.Lerp(startVol, 0f, t / fadeTime);
@@ -115,16 +115,34 @@ public class AudioManager : MonoBehaviour
         }
         musicSource.volume = 0f;
 
-        // Switch clip
+        
         PlayMusic(nextClip);
 
-        // Fade in
+       
         for (float t = 0f; t < fadeTime; t += Time.deltaTime)
         {
             musicSource.volume = Mathf.Lerp(0f, startVol, t / fadeTime);
             yield return null;
         }
         musicSource.volume = startVol;
+    }
+
+    public void PlayLoop(string clipName, float volume = 1f)
+    {
+        if(sfxDict.TryGetValue(clipName, out var clip))
+        {
+            sfxSource.clip = clip;
+            sfxSource.volume = volume;
+            sfxSource.loop = true;
+            sfxSource.Play();
+        }
+    }
+
+    public void StopLoop()
+    {
+        sfxSource.Stop();
+        sfxSource.loop = false;
+        sfxSource.clip = null;  
     }
 }
 

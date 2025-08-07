@@ -15,7 +15,6 @@ public class LayerExample : MonoBehaviour
         {
             Debug.Log("It`s Enemy!!!");
 
-          //  Destroy(col.gameObject);
             playerHealth.TakeDamage(damage);
 
         }

@@ -9,20 +9,13 @@ public class Lever : MonoBehaviour
     public Color activatedColor = Color.green;
     
     Animator anim;
-    void Start()
-    {
-       // leverRenderer.material.color = deactivatedColor;
-    }
+   
     void Awake()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !isActivated) 

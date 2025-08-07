@@ -34,10 +34,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    //void Awake()
-    //{
-    //   // DontDestroyOnLoad(this.gameObject);
-    //}
+ 
 
     void Start()
     {
@@ -71,7 +68,7 @@ public class GameManager : MonoBehaviour
         levelCompleteAnimator.SetTrigger("Show");
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
 
@@ -168,10 +165,7 @@ public class GameManager : MonoBehaviour
             {
                 lever.ChangeColorToGreen();
             }
-            //else
-            //{
-            //    lever.ChangeColorToRed();
-            //}
+
         }
     }
  

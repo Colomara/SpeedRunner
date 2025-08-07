@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded && verticalVelocity < 0)
         {
-            verticalVelocity = -2f; // небольшое значение чтобы не "парить"
+            verticalVelocity = -2f; 
         }
 
         if (isGrounded && Input.GetButtonDown("Jump"))
@@ -52,15 +52,15 @@ public class PlayerMovement : MonoBehaviour
             verticalVelocity = jumpForce;
         }
 
-        // Гравитация
+     
         verticalVelocity += gravity * Time.deltaTime;
 
-        // Движение по осям XZ
+       
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
-        // Объединяем с вертикалью
+       
         Vector3 velocity = move * moveSpeed *speedMultiplier;
         velocity.y = verticalVelocity;
 
