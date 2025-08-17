@@ -96,9 +96,10 @@ Assets/
 | **ToFaceText** | Keeps world-space text facing the camera for readability. |
 
 ## Screenshots
-<img width="1512" height="1234" alt="image" src="https://github.com/user-attachments/assets/3136d385-c435-4911-ab83-4177d38b8b08" /> - Main menu 
-<img width="2505" height="1210" alt="image" src="https://github.com/user-attachments/assets/ba30dfd5-6e44-49b2-a349-27f5c63a2f55" /> - First level gameplay
-
+ Main menu 
+<img width="1512" height="1234" alt="image" src="https://github.com/user-attachments/assets/3136d385-c435-4911-ab83-4177d38b8b08" /> 
+First level gameplay
+<img width="2505" height="1210" alt="image" src="https://github.com/user-attachments/assets/ba30dfd5-6e44-49b2-a349-27f5c63a2f55" />  
 
 ## Known Notes
 - Project is tested on **Windows**; other platforms are unverified.
