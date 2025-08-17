@@ -111,7 +111,5 @@ First level gameplay
 
 ## Author
 
-This project was created by
-[Polikarpov Kyryl]
-(https://github.com/Colomara).
+This project was created by [Polikarpov Kyryl] (https://github.com/Colomara).
 
