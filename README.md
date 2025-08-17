@@ -14,7 +14,7 @@ SpeedRunner is a level-based platformer where you collect and use items, activat
 - **Inventory & Items** — 4 UI slots; pick up and use items (e.g., heal, speed boost).
 - **Platforms & Traps** — static/moving platforms; slow-damage zones, freezing/slow effects, boosters.
 - **UI & Feedback** — timer, hints, lever prompts, inventory bar.
-- **Animation & Audio** — Animator-driven states; scripted color/opacity & object motion; multiple `AudioSource`s with mute/unmute toggle.
+- **Animation & Audio** — Animator-driven states; scripted color/opacity & object motion; multiple `AudioSource` with mute/unmute toggle.
 
 ## Tech Stack
 - Unity **2022.3.42f1 (LTS)**
@@ -38,7 +38,7 @@ SpeedRunner is a level-based platformer where you collect and use items, activat
 ## Build (Windows)
 1. `File ▸ Build Settings…`
 2. Select **Windows** (PC, Mac & Linux Standalone → Windows).
-3. Add scenes in order: `MainMenu`, `Level01`, `Level02`.
+3. Add scenes in order: `MainMenu`, `Level01`, `Level02`, `Level03`.
 4. Click **Build** (or **Build And Run**).
 
 ## Project Structure
@@ -101,8 +101,7 @@ Assets/
 First level gameplay
 <img width="2505" height="1210" alt="image" src="https://github.com/user-attachments/assets/ba30dfd5-6e44-49b2-a349-27f5c63a2f55" />  
 
-## Known Notes
-- Project is tested on **Windows**; other platforms are unverified.
+
 
 ## Roadmap (nice-to-have)
 - More enemy behaviors and a boss pattern
@@ -110,9 +109,9 @@ First level gameplay
 - Gamepad support
 - Additional traps and level themes
 
-## Credits
-- Unity packages: **TextMesh Pro** (Unity Technologies)
-- Free assets visible in the project structure: **GhostCharacter_Free**, **Particlecollection_Free samples**, **PBS Materials Variety Pack**, **Yughues Free Metal Materials** (add license links if required)
+## Author
 
-## License
-See the `LICENSE` file in this repository.
+This project was created by
+[Polikarpov Kyryl]
+(https://github.com/Colomara).
+
